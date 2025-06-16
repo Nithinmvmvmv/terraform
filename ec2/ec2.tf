@@ -29,7 +29,7 @@ resource "aws_security_group" "allow_all" {
     }
 
     tags = {
-        Name = "allow-allllll"
+        Name = "allow-all"
         project = "Roboshop"
     }
 }
