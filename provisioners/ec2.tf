@@ -7,7 +7,7 @@ resource "aws_instance" "roboshop" {
   tags = var.ec2_tags
 
   provisioner "local-exec" {
-    command = "${self.private_ip} > inventory"
+    command = "echo ${self.private_ip} > inventory"
     on_failure = continue #ignoring errors
   }
 
@@ -37,7 +37,7 @@ resource "aws_instance" "roboshop" {
     ]
   }
 }
-
+ 
 resource "aws_security_group" "allow_all" {
     name        = var.sg_name
     description = var.sg_description
